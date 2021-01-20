@@ -7,12 +7,16 @@
             <div class="products-wrapper">
                 @foreach ($products as $product)
                     <div class="product">
-                        <h1>{{$product["id"]}} - {{$product["name"]}}</h1>
+                        <h1>
+                            <a href="{{route('products.show', ['product' => $product->id] ) }}">
+                                {{$product->id}} - {{$product->name}}
+                            </a>
+                        </h1>
                         <ul>
-                            <li>Colore: {{$product["color"]}}</li>
-                            <li>Data di produzione: {{$product["product_date"]}}</li>
-                            <li>Tipo prodotto: {{$product["type"]}}</li>
-                            <li>Prezzo: {{$product["price"]}}€</li>
+                            <li>Colore: {{$product->color}}</li>
+                            <li>Data di produzione: {{$product->product_date}}</li>
+                            <li>Tipo prodotto: {{$product->type}}</li>
+                            <li>Prezzo: {{$product->price}}€</li>
                         </ul>
                     </div>
                 @endforeach
