@@ -1,23 +1,17 @@
 @extends('layouts.app')
 
 @section("content")
-    <section>
+    <section id="products-section">
         <div class="container">
             <h1>Pagina prodotti</h1>
-            <div class="products-wrapper">
+            <div class="products-wrapper d-flex justify-content-between">
                 @foreach ($products as $product)
                     <div class="product">
                         <h1>
-                            <a href="{{route('products.show', ['product' => $product->id] ) }}">
+                            <a href="{{route('products.show', ['product' => $product->id] ) }}" class="text-capitalize">
                                 {{$product->id}} - {{$product->name}}
                             </a>
-                        </h1>
-                        <ul>
-                            <li>Colore: {{$product->color}}</li>
-                            <li>Data di produzione: {{$product->product_date}}</li>
-                            <li>Tipo prodotto: {{$product->type}}</li>
-                            <li>Prezzo: {{$product->price}}€</li>
-                        </ul>
+                        </h1>                    
                     </div>
                 @endforeach
             </div>

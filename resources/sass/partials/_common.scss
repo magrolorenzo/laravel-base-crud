@@ -3,3 +3,16 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+a{
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+main{
+    height: calc(100vh - 78px);
+    background-color: lightblue;
+    padding: 50px;
+}
