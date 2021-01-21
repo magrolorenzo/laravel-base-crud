@@ -3,7 +3,8 @@
 @section("content")
     <section>
         <div class="container">
-            <form class="w-50">
+            <form action="{{route("products.store")}}" method="POST" class="w-50">
+                @csrf
                 <div class="form-group">
                     <label>Nome</label>
                     <input type="text" class="form-control" name="name">
@@ -22,9 +23,9 @@
                 </div>
                 <div class="form-group">
                     <label>Price €</label>
-                    <input type="text" class="form-control" name="price">
+                    <input type="number" class="form-control " name="price">
                 </div>
-                <button type="button" name="button" class="btn btn-success">Inserisci</button>
+                <button type="submit" name="button" class="btn btn-success">Inserisci</button>
             </form>
         </div>
     </section>
