@@ -16,13 +16,17 @@
                                 {{$product->id}} - {{$product->name}}
                             </a>
                         </div>
-                        <div class="edit-and-delete">
+                        <div class="edit-and-delete d-flex">
                             <a href="{{route("products.edit", ["product" =>$product->id])}}" class="btn btn-warning">
                                 Modifica
                             </a>
-                            <a href="#" class="btn btn-danger">
-                                Elimina
-                            </a>
+                            <form action="{{route("products.destroy", ["product" =>$product->id])}}" class="d-flex" action="index.html" method="post">
+                                @csrf
+                                @method("DELETE")
+                                <button type="submit" class="btn btn-danger">
+                                    Elimina
+                                </button>
+                            </form>
                         </div>
                     </div>
                 @endforeach

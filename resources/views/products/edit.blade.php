@@ -28,7 +28,7 @@
                 </div>
                 {{-- Bottone di submit --}}
                 <button type="submit" name="button" class="btn btn-warning">
-                    Modifica
+                    Applica Modifiche
                 </button>
             </form>
         </div>
