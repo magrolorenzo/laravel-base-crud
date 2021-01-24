@@ -10,12 +10,20 @@
             {{-- Lista card elementi --}}
             <div class="products-wrapper">
                 @foreach ($products as $product)
-                    <div class="product">
-                        <h1>
-                            <a href="{{route('products.show', ['product' => $product->id] ) }}" class="text-capitalize">
+                    <div class="product d-flex justify-content-between align-items-center">
+                        <div class="product-name">
+                            <a href="{{route('products.show', ['product' => $product->id] ) }}" class="text-capitalize h1">
                                 {{$product->id}} - {{$product->name}}
                             </a>
-                        </h1>
+                        </div>
+                        <div class="edit-and-delete">
+                            <a href="{{route("products.edit", ["product" =>$product->id])}}" class="btn btn-warning">
+                                Modifica
+                            </a>
+                            <a href="#" class="btn btn-danger">
+                                Elimina
+                            </a>
+                        </div>
                     </div>
                 @endforeach
             </div>
